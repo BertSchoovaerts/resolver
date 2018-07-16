@@ -20,7 +20,7 @@ type LoginRequestCallback = (token:string,error:RegExpExecArray) => void
 export class LoginAssistant
 {
     private popup : BrowserWindow
-    private static scope : string = 'repo'
+    private scope : string
     public parentWindow : BrowserWindow
 
     constructor(parent: BrowserWindow)
@@ -34,7 +34,6 @@ export class LoginAssistant
     public requestLogin(callback: LoginRequestCallback, scope: string = 'repo')
     {
         this.scope = scope
-
         let me = this
         let currentlyHandlingRequest : boolean = false
         this.popup = new BrowserWindow({

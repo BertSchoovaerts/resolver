@@ -96,6 +96,9 @@ app.on("activate", () => {
   }
 });
 
+// Receive Interprocess events
+
+// Publishing requests
 ipcMain.on('request-publishing',(event: Event, request: PublishRequest) => {
     console.log(request.csvPath + ',' + request.repoUrl + ',' + request.subdir)
 })
