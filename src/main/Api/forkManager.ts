@@ -75,8 +75,20 @@ export class ForkManager {
                         console.log("ksldfjqlsisefjsqiljqlskejqlejfmama")
                         switch (statuscode)
                         {
+                            case 201:
+                                console.log("merge accepted and executed")
+                                break;
                             case 202:
                                 console.log("merge accepted")
+                                break;
+                            case 204:
+                                console.log("nothing to merge")
+                                break;
+                            case 209:
+                                console.log("merge conflict, this should not happen")
+                                break;
+                            case 404:
+                                console.error("404 not found")
                                 break;
                             default: 
                                 console.log(statuscode);
